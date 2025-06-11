@@ -1,19 +1,36 @@
 # Real-Time-Facial-Emotion-Recognition-Model
 This project performs facial emotion recognition (FER) using transfer learning with MobileNetV2, trained on a custom version of the FER-2013 dataset. It detects and classifies human emotions from facial expressions captured through images/ web cam
 
+## 🔗 Run in Google Colab
+
+You can try the notebook directly in Colab:
+
+[![Open In Colab]([https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID_HERE](https://colab.research.google.com/drive/10Gki4xQj2V-2ZQ7u0QJVZ2R1WfkwmTv0?usp=drive_link))
+
 *#Features*
+
 ->Uses MobileNetV2 as the base model for transfer learning.
+
 ->Trained on custom-upsampled FER-2013 dataset.
+
 ->Supports classification into multiple emotions like happy, sad, angry, etc.
+
 ->Built with TensorFlow and Keras in Google Colab.
+
 ->Training pipeline uses image_dataset_from_directory and prefetching for performance optimization.
 
+
 *#Current Limitations*
+
 Despite heavy data augmentation and targeted upsampling (especially for underrepresented classes like disgust), the model currently shows bias toward the 'sad' class.
+
 Predictions are often skewed, with a tendency to misclassify happy and neutral images as sad or fearful.
+
 Certain facial expressions like disgust and surprise still suffer from poor precision due to class imbalance and model overfitting.
 
+
 #Challenges Faced
+
 Here are some of the key obstacles encountered during development:
 * Data Imbalance*
 Initially, underrepresented emotions like disgust had as few as 436 samples. I manually applied targeted upsampling using data augmentation techniques to improve class balance.
@@ -31,16 +48,25 @@ Adjust learning rate when progress plateaued
 This helped improve training efficiency and model stability.
 
 *#Current Work-in-Progress*
+
 I'm currently in the process of:
+
 Building a CNN from scratch, tailored specifically for the FER-2013 dataset, instead of relying solely on transfer learning.
+
 Experimenting with custom loss functions and balanced class weights to handle emotion skew.
+
 Adding real-time webcam inference using OpenCV for desktop applications.
 
 *#Technologies Used*
+
 Python
+
 TensorFlow & Keras
+
 OpenCV (for inference, planned)
+
 Google Colab (for training)
+
 Matplotlib & Seaborn (for visualizations)
 
 # Final Thoughts
