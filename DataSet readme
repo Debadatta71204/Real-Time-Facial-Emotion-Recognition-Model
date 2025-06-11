@@ -1,0 +1,71 @@
+# 😐 FER2013 Dataset Overview
+
+This project uses the **FER2013 (Facial Expression Recognition 2013)** dataset, which is structured into `train` and `test` folders.
+
+---
+
+## 📂 Dataset Structure
+
+dataset/
+├── train/
+│ ├── angry/
+│ ├── disgust/
+│ ├── fear/
+│ ├── happy/
+│ ├── neutral/
+│ ├── sad/
+│ └── surprise/
+└── test/
+├── angry/
+├── disgust/
+├── fear/
+├── happy/
+├── neutral/
+├── sad/
+└── surprise/
+
+
+Each subfolder contains grayscale images (48x48) of facial expressions, categorized by emotion.
+
+---
+
+## 📉 Data Imbalance & Augmentation
+
+The original training data was **highly imbalanced**, with certain classes (like "disgust") having significantly fewer samples than others.
+
+To address this issue:
+
+- I **augmented the training dataset** using transformations such as:
+  - Horizontal flipping
+  - Rotation
+  - Zoom
+  - Brightness adjustments
+  - Shifts
+
+The augmented dataset ensures a better balance across all emotion classes, which helps improve model generalization.
+
+---
+
+## 🔗 Access the Augmented Dataset
+
+Due to the size and GitHub's file size limits, the **augmented training dataset is hosted on Google Drive**:
+
+👉 [Download Augmented Training Data](https://drive.google.com/drive/folders/180iKYkMYFLe8kOxT8RLFJzrr3K18qXVa?usp=drive_link)
+
+> 📌 *Note: The link will be updated once the upload is complete.*
+
+---
+
+## 📜 Dataset Source
+
+- Original FER2013 dataset: Available via [Kaggle](https://www.kaggle.com/datasets/msambare/fer2013?select=train)
+- License: Please refer to the Kaggle page or original dataset terms for licensing and usage policies.
+
+---
+
+## ✅ Recommendations
+
+- Use the augmented training data for model training.
+- Use the original `test` folder as-is for evaluation, to ensure consistent benchmarking.
+
+---
